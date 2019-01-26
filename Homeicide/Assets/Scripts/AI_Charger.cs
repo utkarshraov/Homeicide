@@ -25,7 +25,6 @@ public class AI_Charger : AI
 
     void Attack()
     {
-        awareness.target.GetComponent<playerController>();
         if(timer > attackCooldown)
         {
             timer = 0f;
