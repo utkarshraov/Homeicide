@@ -16,6 +16,11 @@ public class playerController : MonoBehaviour
     [SerializeField]
     private int jumpForce;
 
+    [SerializeField]
+    private Transform groundCheck;
+
+    private bool isOnGround = true;
+
     void Start()
     {
         
@@ -24,17 +29,23 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+        isOnGround = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")); // check for being on the ground
+        rb.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y);
+
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
-            rb.velocity = new Vector2(moveSpeed, 0);
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            isOnGround = false;
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+
+        if (rb.velocity.y < 0)
         {
-            rb.velocity = new Vector2(-moveSpeed, 0);
+            rb.velocity += Vector2.up * Physics.gravity.y * 0.1f;
         }
-        else if(Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.AddForce(Vector2.up * jumpForce,ForceMode2D.Impulse)
-        }
+    }
+
+    private void FixedUpdate()
+    {
+       
     }
 }
