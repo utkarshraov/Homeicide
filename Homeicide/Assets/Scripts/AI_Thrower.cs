@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class AI_Thrower : AI
 {
-    [SerializeField] float attackDistance, attackCooldown;
+    [SerializeField] float attackDistance = 4f, attackCooldown = 1f, projectileSpeed = 10f;
     [SerializeField] GameObject projectile;
+    [SerializeField] Transform Muzzle;
     float timer = 0f;
     // Update is called once per frame
     void FixedUpdate()
@@ -24,11 +25,19 @@ public class AI_Thrower : AI
 
     void Attack()
     {
-        awareness.target.GetComponent<playerController>();
         if (timer > attackCooldown)
         {
             timer = 0f;
             anim.SetBool("Attack", true);
         }
+    }
+
+    public void Fire()
+    {
+        Instantiate(projectile, Muzzle.position - Muzzle.right, Quaternion.identity).GetComponent<Projectile>().Initialise(-Muzzle.right * projectileSpeed);
+    }
+
+    public void EndFire()
+    {
     }
 }
