@@ -113,10 +113,12 @@ public class playerController : MonoBehaviour
             flame.transform.position = transform.position + new Vector3(flameOffset, 0);
         flame.transform.SetParent(transform);
         lockDirection = true;
+        moveSpeed = 10;
 
         yield return new WaitForSeconds(flamethrowerDuration);
 
         lockDirection = false;
+        moveSpeed = 15;
 
         Destroy(flame);
 
