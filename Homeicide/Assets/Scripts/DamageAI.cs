@@ -7,10 +7,10 @@ public class DamageAI : MonoBehaviour
     [SerializeField]
     private float damage;
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         AI ai = collision.gameObject.GetComponent<AI>();
-        if(ai)
+        if (ai)
         {
             ai.Damage(damage);
         }

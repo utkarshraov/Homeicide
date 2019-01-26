@@ -127,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 8104943112670329155, guid: a63b7fc09533d384a9784d0d31d4b3a3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.478762
+      value: -55.29
       objectReference: {fileID: 0}
     - target: {fileID: 8104943112670329155, guid: a63b7fc09533d384a9784d0d31d4b3a3,
         type: 3}
@@ -229,6 +229,22 @@ PrefabInstance:
         type: 3}
       propertyPath: flamethrowerDuration
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8104943112670329154, guid: a63b7fc09533d384a9784d0d31d4b3a3,
+        type: 3}
+      propertyPath: jumpForce
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8104943112670329154, guid: a63b7fc09533d384a9784d0d31d4b3a3,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 6684034264838251842, guid: f79eb00cac9c0514ea19d4cb748629d0,
+        type: 3}
+    - target: {fileID: 8104943112670329154, guid: a63b7fc09533d384a9784d0d31d4b3a3,
+        type: 3}
+      propertyPath: moveOffset
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a63b7fc09533d384a9784d0d31d4b3a3, type: 3}

@@ -26,10 +26,13 @@ public class playerController : MonoBehaviour
     private cameraController camera;
 
     [SerializeField]
-    private float flameOffset;
+    private float moveOffset;
 
     [SerializeField]
     private GameObject flamethrowerPrefab;
+
+    [SerializeField]
+    private GameObject projectilePrefab;
 
     [SerializeField]
     private float flamethrowerDuration;
@@ -60,11 +63,16 @@ public class playerController : MonoBehaviour
         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y);
         UpdateDirection();
 
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isOnGround)
         {
             //jump
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isOnGround = false;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
         }
 
         if (rb.velocity.y < 0)
@@ -108,9 +116,9 @@ public class playerController : MonoBehaviour
 
         GameObject flame = Instantiate(flamethrowerPrefab);
         if (Facing == Direction.Left)
-            flame.transform.position = transform.position + new Vector3(-flameOffset, 0);
+            flame.transform.position = transform.position + new Vector3(-moveOffset, 0);
         else if (Facing == Direction.Right)
-            flame.transform.position = transform.position + new Vector3(flameOffset, 0);
+            flame.transform.position = transform.position + new Vector3(moveOffset, 0);
         flame.transform.SetParent(transform);
         lockDirection = true;
         moveSpeed = 10;
@@ -123,5 +131,24 @@ public class playerController : MonoBehaviour
         Destroy(flame);
 
         yield return null;
+    }
+
+    private void Shoot()
+    {
+        GameObject projectile = Instantiate(projectilePrefab);
+        int direction = 1;
+        if(Facing == Direction.Left)
+        {
+            direction = -1;
+        }
+        else if (Facing == Direction.Right)
+        {
+            direction = 1;
+        }
+        projectile.transform.position = transform.position + new Vector3(moveOffset * direction, 0);
+
+        projectile.GetComponent<Projectile>().Initialise(new Vector2(moveOffset * direction, 0));
+        print(projectile.transform.position);
+
     }
 }
