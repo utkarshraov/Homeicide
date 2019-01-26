@@ -5,6 +5,7 @@ using UnityEngine;
 public class AI_Thrower : AI
 {
     [SerializeField] float attackDistance, attackCooldown;
+    [SerializeField] GameObject projectile;
     float timer = 0f;
     // Update is called once per frame
     void FixedUpdate()

@@ -5,10 +5,12 @@ using UnityEngine;
 public class AI : MonoBehaviour
 {
     [SerializeField] protected float health, walkSpeed, jumpSpeed;
+    [SerializeField] protected GameObject guts;
     protected Collider2D foot;
     protected Awareness awareness;
     protected Rigidbody2D body;
     protected Animator anim;
+    protected bool dead = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -22,6 +24,15 @@ public class AI : MonoBehaviour
     public void Damage(float i_dam)
     {
         health -= i_dam;
+        if (health <= 0f)
+            Death();
+    }
+
+    public void Death()
+    {
+        Instantiate(guts, transform.position, transform.rotation);
+        anim.SetBool("Dead", true);
+        Destroy(this);
     }
 
     protected void Move(float i_move)
