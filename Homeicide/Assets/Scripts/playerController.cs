@@ -41,6 +41,9 @@ public class playerController : MonoBehaviour
         if (rb.velocity.y < 0)
         {
             rb.velocity += Vector2.up * Physics.gravity.y * 0.1f;
+
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
         }
     }
 
