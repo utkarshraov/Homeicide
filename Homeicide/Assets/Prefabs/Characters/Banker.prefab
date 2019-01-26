@@ -303,7 +303,7 @@ MonoBehaviour:
   jumpSpeed: 1
   guts: {fileID: 3625943931204802314, guid: 79b0282bac1dcc34c861e5a36948dc05, type: 3}
   attackDistance: 5
-  attackCooldown: 3
+  attackCooldown: 2
   atk: {fileID: 5125716763022295338}
 --- !u!95 &7527149937667543671
 Animator:
@@ -315,7 +315,7 @@ Animator:
   m_GameObject: {fileID: 7527149937667543677}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b217eacd2cecb3146b6b3bd38dee3efe, type: 2}
+  m_Controller: {fileID: 9100000, guid: b63dcdf6104832f4aab2216ee60668ac, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

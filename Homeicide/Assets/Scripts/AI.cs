@@ -32,6 +32,9 @@ public class AI : MonoBehaviour
     {
         Instantiate(guts, transform.position, transform.rotation);
         anim.SetBool("Dead", true);
+        foreach (Collider2D col in GetComponentsInChildren<Collider2D>())
+            col.enabled = false;
+        body.bodyType = RigidbodyType2D.Kinematic;
         Destroy(this);
     }
 
