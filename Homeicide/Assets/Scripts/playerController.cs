@@ -34,7 +34,7 @@ public class playerController : MonoBehaviour
         }
         else if(Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(Vector2.up * jumpForce,ForceMode2D.Impulse)
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 }
