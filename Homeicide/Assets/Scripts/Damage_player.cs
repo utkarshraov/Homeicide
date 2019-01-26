@@ -7,9 +7,14 @@ public class Damage_player : MonoBehaviour
     [SerializeField] float damage;
     Collider2D atk;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Awake()
     {
-        playerController p = collision.gameObject.GetComponent<playerController>();
+        atk = GetComponent<Collider2D>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        playerController p = col.gameObject.GetComponent<playerController>();
         if (p)
         {
             p.TakeDamage(damage);
