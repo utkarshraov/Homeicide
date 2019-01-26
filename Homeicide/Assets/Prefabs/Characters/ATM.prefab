@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 4016604544467275352}
   - component: {fileID: 4016604544467275354}
   - component: {fileID: 4016604544467275349}
-  - component: {fileID: 4016604544467275353}
+  - component: {fileID: 860369087331707838}
   - component: {fileID: 4016604544467275358}
   - component: {fileID: 4016604544467275355}
   m_Layer: 9
@@ -197,7 +197,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &4016604544467275349
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -211,7 +211,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: 0, y: 2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0.72999996, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.158}
@@ -222,9 +222,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 3.3}
   m_EdgeRadius: 0
---- !u!114 &4016604544467275353
+--- !u!114 &860369087331707838
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,14 +233,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4016604544467275348}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9123e4302561ce249bdb34287de7ebbe, type: 3}
+  m_Script: {fileID: 11500000, guid: 681eddcba15e15a41aa20dc089ca4253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
   walkSpeed: 3
   jumpSpeed: 1
-  attackDistance: 3
-  attackCooldown: 0
+  guts: {fileID: 3625943931204802314, guid: 79b0282bac1dcc34c861e5a36948dc05, type: 3}
+  attackDistance: 20
+  attackCooldown: 3
+  projectile: {fileID: 7904302366557714143, guid: bab67f9dc69e0ea439005ad38955bf7d,
+    type: 3}
 --- !u!95 &4016604544467275358
 Animator:
   serializedVersion: 3
