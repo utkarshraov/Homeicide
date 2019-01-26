@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AI_Charger : AI
+public class AI_Thrower : AI
 {
     [SerializeField] float attackDistance, attackCooldown;
-    [SerializeField] Collider2D atk;
-
     float timer = 0f;
     // Update is called once per frame
     void FixedUpdate()
@@ -26,20 +24,10 @@ public class AI_Charger : AI
     void Attack()
     {
         awareness.target.GetComponent<playerController>();
-        if(timer > attackCooldown)
+        if (timer > attackCooldown)
         {
             timer = 0f;
             anim.SetBool("Attack", true);
         }
-    }
-
-    public void Fire()
-    {
-        atk.enabled = true;
-    }
-
-    public void EndFire()
-    {
-        atk.enabled = false;
     }
 }
