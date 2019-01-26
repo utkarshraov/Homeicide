@@ -233,7 +233,7 @@ PrefabInstance:
     - target: {fileID: 8104943112670329154, guid: a63b7fc09533d384a9784d0d31d4b3a3,
         type: 3}
       propertyPath: jumpForce
-      value: 15
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8104943112670329154, guid: a63b7fc09533d384a9784d0d31d4b3a3,
         type: 3}
@@ -956,6 +956,7 @@ MonoBehaviour:
   walkSpeed: 3
   jumpSpeed: 1
   guts: {fileID: 0}
+  eject: {fileID: 0}
   attackDistance: 8
   attackCooldown: 3
   atk: {fileID: 1311102844}

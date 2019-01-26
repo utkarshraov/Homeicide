@@ -6,7 +6,7 @@ public class AI_Thrower : AI
 {
     [SerializeField] float attackDistance = 4f, attackCooldown = 1f, projectileSpeed = 10f;
     [SerializeField] GameObject projectile;
-    [SerializeField] Transform Muzzle;
+    [SerializeField] Transform muzzle;
     float timer = 0f;
     // Update is called once per frame
     void FixedUpdate()
@@ -34,7 +34,7 @@ public class AI_Thrower : AI
 
     public void Fire()
     {
-        Instantiate(projectile, Muzzle.position - Muzzle.right, Quaternion.identity).GetComponent<Projectile>().Initialise(-Muzzle.right * projectileSpeed);
+        Instantiate(projectile, muzzle.position - muzzle.right, Quaternion.identity).GetComponent<Projectile>().Initialise(-muzzle.right * projectileSpeed);
     }
 
     public void EndFire()

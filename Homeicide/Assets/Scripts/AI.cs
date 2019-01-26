@@ -6,6 +6,7 @@ public class AI : MonoBehaviour
 {
     [SerializeField] protected float health, walkSpeed, jumpSpeed;
     [SerializeField] protected GameObject guts;
+    [SerializeField] protected Transform eject;
     protected Collider2D foot;
     protected Awareness awareness;
     protected Rigidbody2D body;
@@ -30,7 +31,7 @@ public class AI : MonoBehaviour
 
     public void Death()
     {
-        Instantiate(guts, transform.position, transform.rotation);
+        Instantiate(guts, eject.position, eject.rotation);
         anim.SetBool("Dead", true);
         foreach (Collider2D col in GetComponentsInChildren<Collider2D>())
             col.enabled = false;
