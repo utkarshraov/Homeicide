@@ -28,6 +28,8 @@ public class AI : MonoBehaviour
     {
         if (foot.IsTouchingLayers())
         {
+            if (i_move != 0f)
+                transform.localScale = new Vector3(-i_move, transform.localScale.y, transform.localScale.z);
             anim.SetBool("Walk", i_move != 0f);
             body.velocity = new Vector2( walkSpeed * i_move, body.velocity.y);
         }

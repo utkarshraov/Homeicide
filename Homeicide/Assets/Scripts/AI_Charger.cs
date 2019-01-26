@@ -9,6 +9,7 @@ public class AI_Charger : AI
     // Update is called once per frame
     void FixedUpdate()
     {
+        anim.SetBool("Attack", false);
         timer += Time.fixedDeltaTime;
         if (awareness.target)
             if (Vector2.Distance(awareness.target.position, transform.position) > attackDistance)
