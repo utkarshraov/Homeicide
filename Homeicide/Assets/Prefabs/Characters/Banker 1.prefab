@@ -95,7 +95,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6163099623807684107}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.5610003}
 --- !u!114 &7033523175323309276
 MonoBehaviour:
@@ -153,7 +153,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -943089157
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: -2
   serializedVersion: 2
   m_Quality: 0
@@ -757,7 +757,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -943089157
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: -3
   serializedVersion: 2
   m_Quality: 0
@@ -1072,7 +1072,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -943089157
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: 1
   serializedVersion: 2
   m_Quality: 0
@@ -1318,7 +1318,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -943089157
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: -1
   serializedVersion: 2
   m_Quality: 0
@@ -1421,7 +1421,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -943089157
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -1469,7 +1469,6 @@ Transform:
   - {fileID: 6163099623897644596}
   - {fileID: 6163099622982236858}
   - {fileID: 6163099623584433769}
-  - {fileID: 6163099624350321370}
   - {fileID: 271782432292907116}
   - {fileID: 4797762233714273763}
   m_Father: {fileID: 6163099624230784299}
@@ -1563,7 +1562,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -943089157
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: -2
   serializedVersion: 2
   m_Quality: 0
@@ -1666,104 +1665,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &6163099624350321373
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6163099624350321370}
-  - component: {fileID: 6163099624350321369}
-  - component: {fileID: 6163099624350321368}
-  - component: {fileID: 6163099624350321371}
-  m_Layer: 0
-  m_Name: Shoe
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6163099624350321370
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6163099624350321373}
-  m_LocalRotation: {x: -0, y: -0, z: 0.022300811, w: 0.9997513}
-  m_LocalPosition: {x: -0.15112424, y: 1.5833062, z: -0.18646291}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6163099623807684107}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6163099624350321369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6163099624350321373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec17ceaa560940e9bf0dbeafc3a1971, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SpriteMesh: {fileID: 11400000, guid: eeb60dc6d827852499fb3cd9197764d6, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_BoneTransforms:
-  - {fileID: 0}
---- !u!33 &6163099624350321368
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6163099624350321373}
-  m_Mesh: {fileID: 0}
---- !u!23 &6163099624350321371
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6163099624350321373}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!1 &6163099624427405319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1852,7 +1753,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -943089157
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: 2
   serializedVersion: 2
   m_Quality: 0
@@ -2158,6 +2059,7 @@ MonoBehaviour:
   walkSpeed: 3
   jumpSpeed: 1
   guts: {fileID: 0}
+  eject: {fileID: 0}
   attackDistance: 8
   attackCooldown: 3
   atk: {fileID: 6163099622852761202}
@@ -2306,7 +2208,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6163099623807684107}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &984929476036120184
 MonoBehaviour:
@@ -2364,7 +2266,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -943089157
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: -3
   serializedVersion: 2
   m_Quality: 0
