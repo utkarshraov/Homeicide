@@ -23,6 +23,12 @@ public class cameraController : MonoBehaviour
     [SerializeField]
     private float maxOffset;
 
+    [SerializeField]
+    private float maxLeftDistance;
+
+    [SerializeField]
+    private float maxRightDistance;
+
     private Quaternion actualRotation;
 
     void Start()
@@ -34,6 +40,10 @@ public class cameraController : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(player.transform.position.x, transform.position.y, -60f);
+        if (transform.position.x > maxRightDistance)
+            transform.position = new Vector3(maxRightDistance, transform.position.y, -60f);
+        if (transform.position.x < maxLeftDistance)
+            transform.position = new Vector3(maxLeftDistance, transform.position.y,-60f);
         Shake();
     }
 
