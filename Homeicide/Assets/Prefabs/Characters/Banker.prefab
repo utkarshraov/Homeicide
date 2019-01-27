@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5125716763022295341}
   - component: {fileID: 5125716763022295338}
   - component: {fileID: 5125716763022295339}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7527149936460545556}
   - component: {fileID: 7527149936460545643}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Bod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 7527149937667543664}
   - component: {fileID: 7527149937667543671}
   - component: {fileID: 7527149937667543666}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Banker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,10 +301,10 @@ MonoBehaviour:
   health: 1
   walkSpeed: 3
   jumpSpeed: 1
+  attackCooldown: 2
+  attackDistance: 5
   guts: {fileID: 3625943931204802314, guid: 79b0282bac1dcc34c861e5a36948dc05, type: 3}
   eject: {fileID: 0}
-  attackDistance: 5
-  attackCooldown: 2
   atk: {fileID: 5125716763022295338}
 --- !u!95 &7527149937667543671
 Animator:

@@ -10,7 +10,7 @@ public class AI_Thrower : AI
 
     public void Fire()
     {
-        Instantiate(projectile, muzzle.position - muzzle.right, Quaternion.identity).GetComponent<Projectile>().Initialise(-muzzle.right * projectileSpeed);
+        Instantiate(projectile, muzzle.position - muzzle.right, Quaternion.identity).GetComponent<Projectile>().Initialise(-muzzle.right * transform.localScale.x * projectileSpeed);
     }
 
     public void EndFire()

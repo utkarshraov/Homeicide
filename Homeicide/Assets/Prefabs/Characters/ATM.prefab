@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 426807515}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5324778326825158540}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Eject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4016604543526871613}
   - component: {fileID: 4016604543526871618}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Bod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4016604543526871612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 426807515}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 860369087331707838}
   - component: {fileID: 4016604544467275358}
   - component: {fileID: 4016604544467275355}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: ATM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.65}
+  m_Offset: {x: 0, y: 2.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0.72999996, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.158}
@@ -284,7 +284,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 3.3}
+  m_Size: {x: 1, y: 4.5}
   m_EdgeRadius: 0
 --- !u!114 &860369087331707838
 MonoBehaviour:
@@ -301,10 +301,10 @@ MonoBehaviour:
   health: 1
   walkSpeed: 3
   jumpSpeed: 1
+  attackCooldown: 3
+  attackDistance: 35
   guts: {fileID: 3625943931204802314, guid: 79b0282bac1dcc34c861e5a36948dc05, type: 3}
   eject: {fileID: 5324778326825158540}
-  attackDistance: 35
-  attackCooldown: 3
   projectileSpeed: 10
   projectile: {fileID: 7904302366557714143, guid: bab67f9dc69e0ea439005ad38955bf7d,
     type: 3}

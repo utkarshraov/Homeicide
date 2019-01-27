@@ -16,10 +16,10 @@ TagManager:
   - Ground
   - Players
   - AI
-  - Attacks
+  - Player Attacks
   - PostProcessing
-  - 
-  - 
+  - Enemies
+  - Enemy Attacks
   - 
   - 
   - 
