@@ -48,6 +48,9 @@ public class playerController : MonoBehaviour
     [SerializeField]
     private float flamethrowerCD;
 
+    [SerializeField]
+    private GameObject[] pointers = new GameObject[2];
+
 
     private enum Direction { Left, Right }
 
@@ -120,12 +123,12 @@ public class playerController : MonoBehaviour
             if (rb.velocity.x > 0)
             {
                 Facing = Direction.Right;
-                pointer.transform.position = new Vector3(0.5f * 8f, 0.3f * 8f) + transform.position;
+                pointer.transform.position = pointers[0].transform.position;
             }
             else if (rb.velocity.x < 0)
             {
                 Facing = Direction.Left;
-                pointer.transform.position = new Vector3(-0.5f * 8f, 0.3f * 8f) + transform.position;
+                pointer.transform.position = pointers[1].transform.position;
             }
         }
     }
@@ -150,7 +153,7 @@ public class playerController : MonoBehaviour
             flame.transform.position = transform.position + new Vector3(moveOffset, 0);
         flame.transform.SetParent(transform);
 
-        flame.transform.localScale = new Vector3(3, 3, 3);
+        //flame.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
         lockDirection = true;
         moveSpeed = 10;
 

@@ -200,7 +200,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 10.16
+  m_Radius: 50
 --- !u!1 &4016604544467275348
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +303,7 @@ MonoBehaviour:
   jumpSpeed: 1
   guts: {fileID: 3625943931204802314, guid: 79b0282bac1dcc34c861e5a36948dc05, type: 3}
   eject: {fileID: 5324778326825158540}
-  attackDistance: 20
+  attackDistance: 35
   attackCooldown: 3
   projectileSpeed: 10
   projectile: {fileID: 7904302366557714143, guid: bab67f9dc69e0ea439005ad38955bf7d,
