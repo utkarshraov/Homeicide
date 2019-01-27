@@ -97,7 +97,7 @@ public class playerController : MonoBehaviour
         {
             stompBox.SetActive(false);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             StartCoroutine(Flamethrower());
         }
