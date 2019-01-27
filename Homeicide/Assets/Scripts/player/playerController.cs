@@ -5,7 +5,7 @@ using UnityEngine;
 public class playerController : MonoBehaviour
 {
     [SerializeField]
-    private float health;
+    public float health;
 
     [SerializeField]
     private int moveSpeed = 5;
@@ -20,7 +20,7 @@ public class playerController : MonoBehaviour
     private Transform groundCheck;
 
     [SerializeField]
-    private Transform pointer, presence;
+    private Transform  presence;
 
     [SerializeField]
     private cameraController camera;
@@ -30,12 +30,23 @@ public class playerController : MonoBehaviour
 
     [SerializeField]
     private GameObject flamethrowerPrefab;
+    [SerializeField]
+    private GameObject carPrefab;
 
     [SerializeField]
     private GameObject projectilePrefab;
 
     [SerializeField]
     private float flamethrowerDuration;
+
+    [SerializeField]
+    private AudioSource flamethrowerSound;
+
+    [SerializeField]
+    private AudioSource stompSound;
+
+    [SerializeField]
+    private AudioClip throwSound;
 
     private bool isOnGround = true;
 
@@ -49,28 +60,37 @@ public class playerController : MonoBehaviour
     private float flamethrowerCD;
 
     [SerializeField]
+    private float shidCD;
+
+    [SerializeField]
     private GameObject[] pointers = new GameObject[2];
 
 
-    private enum Direction { Left, Right }
+    public enum Direction { Left, Right }
 
-    Direction Facing = Direction.Right;
+    public Direction Facing = Direction.Right;
 
     private bool lockDirection = false;
 
+    Animator anim;
+
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         bool oldGround = isOnGround;
         isOnGround = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")); // check for being on the ground
         if (oldGround == false && isOnGround == true)
+        {
+            stompSound.Play();
             camera.addShake(0.2f); //shake the camera if we just hit the ground
-
+        }
+        updateCooldowns();
 
         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y);
         UpdateDirection();
@@ -79,10 +99,11 @@ public class playerController : MonoBehaviour
         {
             //jump
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            //StartCoroutine(jump());
             isOnGround = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && shootCD == 0)
         {
             Shoot();
         }
@@ -97,21 +118,46 @@ public class playerController : MonoBehaviour
         {
             stompBox.SetActive(false);
         }
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) && flamethrowerCD == 0)
         {
             StartCoroutine(Flamethrower());
         }
-        updateCooldowns();
+        if (Input.GetKeyDown(KeyCode.X) && shidCD == 0 && rb.velocity.x <0.1f)
+        {
+            StartCoroutine(shidded());
+        }
+
+        anim.SetBool("Car", Input.GetKeyDown(KeyCode.X));
+        anim.SetBool("Jump", !isOnGround);
+        anim.SetBool("Walk", Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f);
+        anim.SetBool("Fire", (flamethrowerCD - 5f) > 0f);
+
+    }
+
+    private IEnumerator jump()
+    {
+        float totalRotate = 0;
+        while (totalRotate < 720)
+        {
+            transform.Rotate(0, 0, 30);
+            totalRotate+=30;
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        yield return null;
     }
 
     void updateCooldowns()
     {
         shootCD -= Time.deltaTime;
         flamethrowerCD -= Time.deltaTime;
+        shidCD -= Time.deltaTime;
         if (shootCD < 0)
             shootCD = 0;
         if (flamethrowerCD < 0)
             flamethrowerCD = 0;
+        if (shidCD < 0)
+            shidCD = 0;
     }
 
     void UpdateDirection()
@@ -121,14 +167,14 @@ public class playerController : MonoBehaviour
             if (rb.velocity.x > 0)
             {
                 Facing = Direction.Right;
-                pointer.transform.position = pointers[0].transform.position;
-                presence.localScale = Vector3.one - (Vector3.right * 2f);
+                //presence.localScale = Vector3.one - (Vector3.right * 2f);
+                presence.transform.rotation = Quaternion.Euler(0, 180, 0);
             }
             else if (rb.velocity.x < 0)
             {
                 Facing = Direction.Left;
-                pointer.transform.position = pointers[1].transform.position;
-                presence.localScale = Vector3.one;
+                presence.transform.rotation = Quaternion.Euler(0, 0, 0);
+                //presence.localScale = Vector3.one;
             }
         }
     }
@@ -136,14 +182,16 @@ public class playerController : MonoBehaviour
     public void TakeDamage(float damageValue)
     {
         health -= damageValue;
+        camera.addShake(0.1f);
     }
 
 
     private IEnumerator Flamethrower()
     {
         yield return new WaitForSeconds(0.4f); // animation time to setup chimney
-
+        flamethrowerCD = 10;
         GameObject flame = Instantiate(flamethrowerPrefab);
+        flamethrowerSound.Play();
         if (Facing == Direction.Left)
         {
             flame.transform.position = transform.position + new Vector3(-moveOffset.x, moveOffset.y);
@@ -158,7 +206,7 @@ public class playerController : MonoBehaviour
         moveSpeed = 10;
 
         yield return new WaitForSeconds(flamethrowerDuration);
-
+        flamethrowerSound.Stop();
         lockDirection = false;
         moveSpeed = 15;
 
@@ -171,6 +219,7 @@ public class playerController : MonoBehaviour
     {
         GameObject projectile = Instantiate(projectilePrefab);
         int direction = 1;
+        stompSound.PlayOneShot(throwSound);
         if(Facing == Direction.Left)
         {
             direction = -1;
@@ -180,7 +229,42 @@ public class playerController : MonoBehaviour
             direction = 1;
         }
         projectile.transform.position = transform.position + new Vector3(moveOffset.x * direction, moveOffset.y);
-
+        shootCD = 0.5f;
         projectile.GetComponent<Projectile>().Initialise(new Vector2(moveOffset.x * direction, 0));
+    }
+
+    void checkDeath()
+    {
+        if(health < 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        GetComponent<LoadScene>().LoadAScene(2);
+    }
+
+
+    private IEnumerator shidded()
+    {
+        //yield return new WaitForSeconds(0.5f);
+        GameObject projectile = Instantiate(carPrefab);
+        int direction = 1;
+        stompSound.PlayOneShot(throwSound);
+        if (Facing == Direction.Left)
+        {
+            direction = -1;
+        }
+        else if (Facing == Direction.Right)
+        {
+            direction = 1;
+        }
+        projectile.transform.position = transform.position + new Vector3(moveOffset.x * direction, moveOffset.y);
+        shootCD = 0.5f;
+        projectile.GetComponent<Projectile>().Initialise(new Vector2(moveOffset.x * direction, 0));
+        shidCD = 10;
+        yield return null;
     }
 }

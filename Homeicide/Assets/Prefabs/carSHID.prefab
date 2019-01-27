@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8686695251153738418}
   - component: {fileID: 1572675091329566752}
   m_Layer: 11
-  m_Name: RangedProjectile
+  m_Name: carSHID
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: -1058159077
   m_SortingLayer: 3
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 61f7a320cc9e166448f363419e790262, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9abb2bec3f3c6a3408b50c0b43ed8b7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,8 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13f446a91c943d43932121f5329d3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  destroyOnCollision: 1
+  damage: 20
+  destroyOnCollision: 0
 --- !u!114 &6987992763527318203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,8 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e3edbe063874b947aa42a8fb05852c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  duration: 2
+  speed: 15
+  duration: 3
   direction: {x: 0, y: 0}
   rb: {fileID: 8686695251153738418}
 --- !u!50 &8686695251153738418
@@ -147,16 +147,16 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.5625098, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 3.2}
+    oldSize: {x: 44, y: 15.4}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.2, y: 3.2}
+  m_Size: {x: 30, y: 15}
   m_EdgeRadius: 0

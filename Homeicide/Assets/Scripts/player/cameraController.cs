@@ -39,12 +39,24 @@ public class cameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x, transform.position.y, -60f);
+        Move();
+        Shake();
+    }
+
+
+    private void Move()
+    {
+        float lookOffset = 20;
+        if (player.GetComponent<playerController>().Facing == playerController.Direction.Right)
+            lookOffset = lookOffset * 1;
+        else if (player.GetComponent<playerController>().Facing == playerController.Direction.Left)
+            lookOffset = lookOffset * -1;
+
+        transform.position = transform.position * 0.95f +  new Vector3(player.transform.position.x + lookOffset, transform.position.y, -60f) * 0.05f;
         if (transform.position.x > maxRightDistance)
             transform.position = new Vector3(maxRightDistance, transform.position.y, -60f);
         if (transform.position.x < maxLeftDistance)
-            transform.position = new Vector3(maxLeftDistance, transform.position.y,-60f);
-        Shake();
+            transform.position = new Vector3(maxLeftDistance, transform.position.y, -60f);
     }
 
     void Shake()

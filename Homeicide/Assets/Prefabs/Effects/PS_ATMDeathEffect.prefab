@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3625943931204802312}
   - component: {fileID: 3625943931204802313}
+  - component: {fileID: 8481940833332630543}
   m_Layer: 0
   m_Name: PS_ATMDeathEffect
   m_TagString: Untagged
@@ -129,6 +130,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8481940833332630543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625943931204802314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c896dcf2dc1ca2042a1fc5fc96b07cd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToLive: 3
 --- !u!1 &3625943931465202156
 GameObject:
   m_ObjectHideFlags: 0

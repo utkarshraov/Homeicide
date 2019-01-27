@@ -12,7 +12,7 @@ public class DamageAIDPS : MonoBehaviour
         AI ai = collision.gameObject.GetComponent<AI>();
         if (ai)
         {
-            ai.Damage(damage + Time.deltaTime);
+            ai.Damage(damage * Time.fixedDeltaTime);
         }
     }
 

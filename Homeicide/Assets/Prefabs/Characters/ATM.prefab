@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426807514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 5, z: 0}
+  m_LocalPosition: {x: -2, y: 3.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4016604543526871613}
@@ -85,8 +85,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4016604543526871612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -2.37, z: 0}
+  m_LocalScale: {x: 2.4, y: 2, z: 1}
   m_Children:
   - {fileID: 426807515}
   m_Father: {fileID: 4016604544467275352}
@@ -200,7 +200,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 100
 --- !u!1 &4016604544467275348
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +273,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 2.25}
+  m_Offset: {x: 0.21958113, y: 6.1659584}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0.72999996, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.158}
@@ -284,7 +284,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 4.5}
+  m_Size: {x: 6.2700844, y: 12.331917}
   m_EdgeRadius: 0
 --- !u!114 &860369087331707838
 MonoBehaviour:
@@ -298,11 +298,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 681eddcba15e15a41aa20dc089ca4253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
-  walkSpeed: 3
+  health: 5
+  walkSpeed: 4
   jumpSpeed: 1
   attackCooldown: 3
-  attackDistance: 35
+  attackDistance: 60
   guts: {fileID: 3625943931204802314, guid: 79b0282bac1dcc34c861e5a36948dc05, type: 3}
   eject: {fileID: 5324778326825158540}
   projectileSpeed: 10
@@ -340,7 +340,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8958f1c703a3b48418b20811f3a16d82, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.326
   m_Pitch: 1
   Loop: 1
   Mute: 1
