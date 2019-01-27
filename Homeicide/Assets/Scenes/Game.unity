@@ -179,103 +179,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8104943112670329155, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8104943112670329155, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8104943112670329155, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8104943112670329154, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 8104943112670329154, guid: a63b7fc09533d384a9784d0d31d4b3a3,
         type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 1551328933}
-    - target: {fileID: 8104943112670329154, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: flamethrowerPrefab
-      value: 
-      objectReference: {fileID: 7769132397155313710, guid: 0edd5b16e40a2434fa12864874104e20,
-        type: 3}
-    - target: {fileID: 8104943112670329154, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: health
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8104943112670329154, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: pointer
-      value: 
-      objectReference: {fileID: 2000768139}
-    - target: {fileID: 8104943112670329154, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: flameOffset
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8104943112670329154, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: flamethrowerDuration
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8104943112670329154, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: jumpForce
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 8104943112670329154, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 6684034264838251842, guid: f79eb00cac9c0514ea19d4cb748629d0,
-        type: 3}
-    - target: {fileID: 8104943112670329154, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: moveOffset
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8104943112670329154, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: pointers.Array.data[0]
-      value: 
-      objectReference: {fileID: 988687867}
-    - target: {fileID: 8104943112670329154, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: pointers.Array.data[1]
-      value: 
-      objectReference: {fileID: 773504534}
-    - target: {fileID: 8104943112670329165, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.0000019073486
-      objectReference: {fileID: 0}
-    - target: {fileID: 8104943112670329165, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 13.336937
-      objectReference: {fileID: 0}
-    - target: {fileID: 8104943112670329165, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.000009536743
-      objectReference: {fileID: 0}
-    - target: {fileID: 8104943112670329165, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 13.221638
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a63b7fc09533d384a9784d0d31d4b3a3, type: 3}
 --- !u!1 &499148805
@@ -388,12 +296,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &773504534 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4177459756915419229, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-    type: 3}
-  m_PrefabInstance: {fileID: 37519389}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &909125611
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,12 +394,6 @@ EdgeCollider2D:
   m_Points:
   - {x: -150, y: -25}
   - {x: 150, y: -25}
---- !u!1 &988687867 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1429258765538191630, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-    type: 3}
-  m_PrefabInstance: {fileID: 37519389}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1311102842
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,6 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f45f0d51c4b6f44b80857b5ef6187e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyOnCollide: 0
   damage: 2
 --- !u!1 &1475001213 stripped
 GameObject:
@@ -798,12 +695,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2000768139 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4327239885505058266, guid: a63b7fc09533d384a9784d0d31d4b3a3,
-    type: 3}
-  m_PrefabInstance: {fileID: 37519389}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4016604543003054214
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,10 +890,10 @@ MonoBehaviour:
   health: 1
   walkSpeed: 3
   jumpSpeed: 1
+  attackCooldown: 3
+  attackDistance: 8
   guts: {fileID: 0}
   eject: {fileID: 0}
-  attackDistance: 8
-  attackCooldown: 3
   atk: {fileID: 1311102844}
 --- !u!95 &4016604543003054220
 Animator:
