@@ -50,3 +50,6 @@ TagManager:
   - name: Foreground
     uniqueID: 3236808219
     locked: 0
+  - name: Banker
+    uniqueID: 700507115
+    locked: 0
