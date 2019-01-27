@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] GameObject enemy;
+    [SerializeField] GameObject[] enemies;
 
     public void Spawn()
     {
-        Instantiate(enemy, transform.position, Quaternion.identity);
+        Instantiate(enemies[Random.Range(0, enemies.Length)], transform.position, Quaternion.identity);
     }
 }

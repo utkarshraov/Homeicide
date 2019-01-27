@@ -162,7 +162,7 @@ PrefabInstance:
     - target: {fileID: 8104943112670329155, guid: a63b7fc09533d384a9784d0d31d4b3a3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8104943112670329155, guid: a63b7fc09533d384a9784d0d31d4b3a3,
         type: 3}
@@ -229,8 +229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df4b252453eb5b346bb023e5f3ca49f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawners:
-  - {fileID: 2116302916}
   maxUnits: 3
   player: {fileID: 1475001213}
 --- !u!1 &354324349
@@ -1156,7 +1154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1998874676
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1271,17 +1269,17 @@ PrefabInstance:
     - target: {fileID: 5295522263880496129, guid: e7c0c5d6965e80f4b8bd5f5078612994,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.479345
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5295522263880496129, guid: e7c0c5d6965e80f4b8bd5f5078612994,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.495461
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 5295522263880496129, guid: e7c0c5d6965e80f4b8bd5f5078612994,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.1846176
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5295522263880496129, guid: e7c0c5d6965e80f4b8bd5f5078612994,
         type: 3}
@@ -1325,15 +1323,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7c0c5d6965e80f4b8bd5f5078612994, type: 3}
---- !u!114 &2116302916 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6506153508799295481, guid: e7c0c5d6965e80f4b8bd5f5078612994,
-    type: 3}
-  m_PrefabInstance: {fileID: 2116302915}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3500d074fb3d1e40a3902a94b73525b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

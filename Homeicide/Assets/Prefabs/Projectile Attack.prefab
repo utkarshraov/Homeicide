@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7904302366557714131}
   - component: {fileID: 7904302366557714128}
   - component: {fileID: 8191147010989504978}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: Projectile Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: -1058159077
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bb8e01a1dc2439c46bed60204803144d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df7962ddf0c4fa54fb821f1f226427cc, type: 3}
   m_Color: {r: 1, g: 0.7909454, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,7 +114,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

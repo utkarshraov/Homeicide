@@ -1954,7 +1954,7 @@ GameObject:
   - component: {fileID: 7078078587390431618}
   - component: {fileID: 7078078587390431623}
   m_Layer: 13
-  m_Name: Banker 2
+  m_Name: Banker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2054,7 +2054,7 @@ Animator:
   m_GameObject: {fileID: 7078078587390431624}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b63dcdf6104832f4aab2216ee60668ac, type: 2}
+  m_Controller: {fileID: 9100000, guid: d6cb5bc0c4181494ea0c4bcd7d7df04b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

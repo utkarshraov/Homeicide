@@ -71,6 +71,7 @@ public class AI : MonoBehaviour
         timer = 0f;
         Instantiate(guts, eject.position, eject.rotation);
         anim.SetBool("Dead", dead = true);
+        Move(0f);
         foreach (Collider2D col in GetComponentsInChildren<Collider2D>())
             col.enabled = false;
         body.bodyType = RigidbodyType2D.Kinematic;

@@ -5,8 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
 
-    [SerializeField]
-    private Spawner[] spawners;
+    private List<Spawner> spawners = new List<Spawner>();
 
     [SerializeField]
     private int maxUnits;
@@ -22,7 +21,9 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        distanceToPlayers = new float[spawners.Length];
+        foreach (Spawner sp in FindObjectsOfType<Spawner>())
+            spawners.Add(sp);
+        distanceToPlayers = new float[spawners.Count];
     }
 
     // Update is called once per frame

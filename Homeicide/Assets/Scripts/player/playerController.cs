@@ -20,7 +20,7 @@ public class playerController : MonoBehaviour
     private Transform groundCheck;
 
     [SerializeField]
-    private Transform pointer;
+    private Transform pointer, presence;
 
     [SerializeField]
     private cameraController camera;
@@ -122,11 +122,13 @@ public class playerController : MonoBehaviour
             {
                 Facing = Direction.Right;
                 pointer.transform.position = pointers[0].transform.position;
+                presence.localScale = Vector3.one - (Vector3.right * 2f);
             }
             else if (rb.velocity.x < 0)
             {
                 Facing = Direction.Left;
                 pointer.transform.position = pointers[1].transform.position;
+                presence.localScale = Vector3.one;
             }
         }
     }
