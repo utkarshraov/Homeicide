@@ -13,6 +13,7 @@ public class DamageAI : MonoBehaviour
         if (ai)
         {
             ai.Damage(damage);
+            print("poop");
         }
     }
 

@@ -39,6 +39,16 @@ public class playerController : MonoBehaviour
 
     private bool isOnGround = true;
 
+    [SerializeField]
+    private GameObject stompBox;
+
+    [SerializeField]
+    private float shootCD;
+
+    [SerializeField]
+    private float flamethrowerCD;
+
+
     private enum Direction { Left, Right }
 
     Direction Facing = Direction.Right;
@@ -47,7 +57,7 @@ public class playerController : MonoBehaviour
 
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -79,12 +89,28 @@ public class playerController : MonoBehaviour
         {
             //make the fall better
             rb.velocity += Vector2.up * Physics.gravity.y * 0.1f;
+            stompBox.SetActive(true);
+        }
+        else
+        {
+            stompBox.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
             StartCoroutine(Flamethrower());
         }
+        updateCooldowns();
+    }
+
+    void updateCooldowns()
+    {
+        shootCD -= Time.deltaTime;
+        flamethrowerCD -= Time.deltaTime;
+        if (shootCD < 0)
+            shootCD = 0;
+        if (flamethrowerCD < 0)
+            flamethrowerCD = 0;
     }
 
     void UpdateDirection()
@@ -116,10 +142,15 @@ public class playerController : MonoBehaviour
 
         GameObject flame = Instantiate(flamethrowerPrefab);
         if (Facing == Direction.Left)
+        {
             flame.transform.position = transform.position + new Vector3(-moveOffset, 0);
+            flame.transform.Rotate(Vector3.forward, 185);
+        }
         else if (Facing == Direction.Right)
             flame.transform.position = transform.position + new Vector3(moveOffset, 0);
         flame.transform.SetParent(transform);
+
+        flame.transform.localScale = new Vector3(3, 3, 3);
         lockDirection = true;
         moveSpeed = 10;
 
@@ -128,7 +159,7 @@ public class playerController : MonoBehaviour
         lockDirection = false;
         moveSpeed = 15;
 
-        Destroy(flame);
+        flame.GetComponent<ParticleSystem>().Stop();
 
         yield return null;
     }
@@ -148,7 +179,5 @@ public class playerController : MonoBehaviour
         projectile.transform.position = transform.position + new Vector3(moveOffset * direction, 0);
 
         projectile.GetComponent<Projectile>().Initialise(new Vector2(moveOffset * direction, 0));
-        print(projectile.transform.position);
-
     }
 }

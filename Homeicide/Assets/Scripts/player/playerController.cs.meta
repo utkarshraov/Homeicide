@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 11c6b021427c7304b9628e3114de81f5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - rb: {instanceID: 0}
+  - groundCheck: {instanceID: 0}
+  - pointer: {instanceID: 0}
+  - camera: {instanceID: 0}
+  - flamethrowerPrefab: {fileID: 2179876284510032905, guid: f1dd3b7f9a1a8274ea5a14e37d161e3f,
+      type: 3}
+  - projectilePrefab: {fileID: 6684034264838251842, guid: f79eb00cac9c0514ea19d4cb748629d0,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
