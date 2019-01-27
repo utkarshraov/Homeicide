@@ -48,6 +48,9 @@ public class playerController : MonoBehaviour
     [SerializeField]
     private AudioClip throwSound;
 
+    [SerializeField]
+    private AudioClip car;
+
     private bool isOnGround = true;
 
     [SerializeField]
@@ -252,7 +255,7 @@ public class playerController : MonoBehaviour
         //yield return new WaitForSeconds(0.5f);
         GameObject projectile = Instantiate(carPrefab);
         int direction = 1;
-        stompSound.PlayOneShot(throwSound);
+        stompSound.PlayOneShot(car);
         if (Facing == Direction.Left)
         {
             direction = -1;

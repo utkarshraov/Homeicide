@@ -19,6 +19,9 @@ public class GameController : MonoBehaviour
 
     private float[] distanceToPlayers;
 
+    [SerializeField]
+    private GameObject boss;
+
     void Start()
     {
         foreach (Spawner sp in FindObjectsOfType<Spawner>())
@@ -26,12 +29,20 @@ public class GameController : MonoBehaviour
         distanceToPlayers = new float[spawners.Count];
 
         StartCoroutine(spawnEnemies());
+        StartCoroutine(spawnBoss());
     }
 
     // Update is called once per frame
     void Update()
     {
-      
+       
+    }
+
+    private IEnumerator spawnBoss()
+    {
+        yield return new WaitForSeconds(60);
+        GameObject newBoss = Instantiate(boss);
+        newBoss.transform.position = player.transform.position + Vector3.right * 50;
     }
 
     void spawnEnemy()
