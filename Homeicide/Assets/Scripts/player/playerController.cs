@@ -68,7 +68,6 @@ public class playerController : MonoBehaviour
     {
         bool oldGround = isOnGround;
         isOnGround = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")); // check for being on the ground
-
         if (oldGround == false && isOnGround == true)
             camera.addShake(0.2f); //shake the camera if we just hit the ground
 
@@ -76,14 +75,14 @@ public class playerController : MonoBehaviour
         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y);
         UpdateDirection();
 
-        if ((Input.GetAxis("Vertical")) > 0.5f && isOnGround)
+        if ((Input.GetKeyDown(KeyCode.UpArrow) && isOnGround))
         {
             //jump
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isOnGround = false;
         }
 
-        if(Input.GetAxis("Jump") > 0.5f)
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
         }
@@ -98,8 +97,7 @@ public class playerController : MonoBehaviour
         {
             stompBox.SetActive(false);
         }
-
-        if (Input.GetAxis("Zed") > 0.5f)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(Flamethrower());
         }
