@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Damage_player : MonoBehaviour
 {
+    [SerializeField] bool destroyOnCollide = false;
     [SerializeField] float damage;
     Collider2D atk;
 
@@ -19,6 +20,8 @@ public class Damage_player : MonoBehaviour
         {
             p.TakeDamage(damage);
             atk.enabled = false;
+            if (destroyOnCollide)
+                Destroy(gameObject);
         }
     }
 
