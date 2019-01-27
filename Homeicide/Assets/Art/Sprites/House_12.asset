@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: House_12
   m_EditorClassIdentifier: 
   m_ApiVersion: 4
-  m_Sprite: {fileID: 21300020, guid: 3eebf80c82a7f844d8f35e8e05c36d03, type: 3}
+  m_Sprite: {fileID: 21300020, guid: 07e466931097882479d42007568f0a6b, type: 3}
   m_SharedMesh: {fileID: 43069995942477550}
 --- !u!43 &43069995942477550
 Mesh:
