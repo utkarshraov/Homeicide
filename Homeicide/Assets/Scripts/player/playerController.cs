@@ -76,14 +76,14 @@ public class playerController : MonoBehaviour
         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y);
         UpdateDirection();
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isOnGround)
+        if ((Input.GetAxis("Vertical")) > 0.5f && isOnGround)
         {
             //jump
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isOnGround = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetAxis("Jump") > 0.5f)
         {
             Shoot();
         }
@@ -99,7 +99,7 @@ public class playerController : MonoBehaviour
             stompBox.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetAxis("Zed") > 0.5f)
         {
             StartCoroutine(Flamethrower());
         }
