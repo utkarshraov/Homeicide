@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class AI : MonoBehaviour
 {
-    [SerializeField] protected float health, walkSpeed, jumpSpeed;
+    [SerializeField] protected float health = 10f, walkSpeed = 3f, jumpSpeed = 4f, attackCooldown = 2f, attackDistance = 4f;
     [SerializeField] protected GameObject guts;
     [SerializeField] protected Transform eject;
+    protected float timer;
     protected Collider2D foot;
     protected Awareness awareness;
     protected Rigidbody2D body;
@@ -22,6 +23,42 @@ public class AI : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    void FixedUpdate()
+    {
+        timer += Time.fixedDeltaTime;
+        anim.SetBool("Attack", false);
+        if (!dead)
+        {
+            if (awareness.target)
+            {
+                float control = Mathf.Sign(awareness.target.position.x - transform.position.x);
+                Look(control);
+                if (Vector2.Distance(awareness.target.position, transform.position) > attackDistance)
+                    Move(control);
+                else
+                {
+                    Move(0f);
+                    Attack();
+                }
+            }
+        }
+        else
+        {
+            Move(0f);
+            if (timer > attackCooldown)
+                Destroy(gameObject);
+        }
+    }
+
+    protected void Attack()
+    {
+        if (timer > attackCooldown)
+        {
+            timer = 0f;
+            anim.SetBool("Attack", true);
+        }
+    }
+
     public void Damage(float i_dam)
     {
         health -= i_dam;
@@ -31,25 +68,29 @@ public class AI : MonoBehaviour
 
     public void Death()
     {
+        timer = 0f;
         Instantiate(guts, eject.position, eject.rotation);
-        anim.SetBool("Dead", true);
+        anim.SetBool("Dead", dead = true);
         foreach (Collider2D col in GetComponentsInChildren<Collider2D>())
             col.enabled = false;
         body.bodyType = RigidbodyType2D.Kinematic;
-        Destroy(this);
     }
 
     protected void Move(float i_move)
     {
         if (foot.IsTouchingLayers())
         {
-            if (i_move != 0f)
-                transform.localScale = new Vector3(-i_move, transform.localScale.y, transform.localScale.z);
             anim.SetBool("Walk", i_move != 0f);
             body.velocity = new Vector2( walkSpeed * i_move, body.velocity.y);
         }
         else
             anim.SetBool("Walk", false);
+    }
+
+    protected void Look(float i_look)
+    {
+        if (i_look != 0f)
+            transform.localScale = new Vector3(-i_look, transform.localScale.y, transform.localScale.z);
     }
 
     protected void Jump()
